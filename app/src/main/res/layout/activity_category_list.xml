@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/categoryList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCF6EA"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".categoryListActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6CAFAB"
+        android:padding="16dp"
+        android:title="Category Management"
+        android:titleTextColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="TYPE MANAGEMENT"
+        android:textColor="#333333"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_box"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type id:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtCatId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:hint="Auto number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type name:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtCatName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="16dp"
+            android:hint="Enter category name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type description:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtCatDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Enter category description" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:backgroundTint="#6CAFAB"
+                android:text="Clear"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="130dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="16dp"
+                android:backgroundTint="#6CAFAB"
+                android:text="Save"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" />
+</LinearLayout>

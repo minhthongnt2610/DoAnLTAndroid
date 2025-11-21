@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/category_item_box"
+    android:layout_marginBottom="10dp">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtCatId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: 1"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txtCatName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: Category"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/txtCatDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desc: Description here"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

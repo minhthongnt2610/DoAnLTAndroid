@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/product_item_box"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:scaleType="centerCrop"
+        android:background="#DDDDDD"
+        android:src="@drawable/ic_app_logo"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtProductId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9F3A4A"
+            android:textSize="16sp"
+            android:text="Id: 1"/>
+
+        <TextView
+            android:id="@+id/txtProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name: Milk Tea"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/txtProductCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: Milk Tea"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>

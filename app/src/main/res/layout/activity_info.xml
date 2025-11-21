@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/infoActivity"
+    android:background="#FCF6EA"
+    tools:context=".Info_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:text="ABOUT ME"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#9F3A4A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- PERSONAL INFO -->
+        <TextView
+            android:text="Name: Nguyễn Văn A"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:text="Class: DH21DTA"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:text="Student ID: 123456789"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:text="Email: example@gmail.com"
+            android:textSize="18sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- CALL BUTTON -->
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call Me"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#9F3A4A"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- GOOGLE MAP -->
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+    </LinearLayout>
+</ScrollView>
