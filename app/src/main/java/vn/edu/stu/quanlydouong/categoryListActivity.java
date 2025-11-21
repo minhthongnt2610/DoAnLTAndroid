@@ -116,7 +116,7 @@ public class categoryListActivity extends AppCompatActivity {
         final Category categoryCanXoa = adapter.getItem(position);
         AlertDialog.Builder builder = new AlertDialog.Builder(categoryListActivity.this);
         builder.setTitle("Xác nhận xóa");
-        builder.setMessage("Bạn có chắc muốn xóa sản phẩm: " + categoryCanXoa.getName() + "?");
+        builder.setMessage("Bạn có chắc muốn xóa: " + categoryCanXoa.getName() + "?");
         builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

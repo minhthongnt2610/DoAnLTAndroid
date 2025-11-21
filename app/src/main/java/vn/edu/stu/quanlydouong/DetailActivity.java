@@ -119,7 +119,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void xulySaveProduct() {
-        int id = Integer.parseInt(edtId.getText().toString());
         String name = edtName.getText().toString();
         double price = Double.parseDouble(edtPrice.getText().toString());
         String desc = edtDesc.getText().toString();
@@ -134,7 +133,7 @@ public class DetailActivity extends AppCompatActivity {
             productDao.updateProduct(product);
             Toast.makeText(this, "Update thành công", Toast.LENGTH_SHORT).show();
         } else {
-            Product p = new Product(id, name, categoryId, price, desc, imagePath);
+            Product p = new Product(0, name, categoryId, price, desc, imagePath);
             productDao.insertProduct(p);
             Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
         }

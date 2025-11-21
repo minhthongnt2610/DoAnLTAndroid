@@ -62,7 +62,7 @@ public class ProductDao {
 
     public void insertProduct(Product product) {
         SQLiteHelper helper = new SQLiteHelper(context);
-        SQLiteDatabase sql = helper.getReadableDatabase();
+        SQLiteDatabase sql = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", product.getName());
         values.put("description", product.getDescription());
@@ -75,7 +75,7 @@ public class ProductDao {
 
     public void updateProduct(Product product) {
         SQLiteHelper helper = new SQLiteHelper(context);
-        SQLiteDatabase sql = helper.getReadableDatabase();
+        SQLiteDatabase sql = helper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("name", product.getName());
         values.put("description", product.getDescription());
@@ -88,7 +88,7 @@ public class ProductDao {
 
     public void deleteProduct(int productId) {
         SQLiteHelper helper = new SQLiteHelper(context);
-        SQLiteDatabase sql = helper.getReadableDatabase();
+        SQLiteDatabase sql = helper.getWritableDatabase();
         sql.delete("Product", "id = ?", new String[]{String.valueOf(productId)});
         sql.close();
     }
