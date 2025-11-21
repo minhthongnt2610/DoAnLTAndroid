@@ -1,6 +1,8 @@
 package vn.edu.stu.quanlydouong;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -42,12 +44,27 @@ public class ProductListActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        lists = new ArrayList<>(dao.getAll());
+        lists = new ArrayList<>(dao.getAllProduct());
         adapter = new ProductAdapter(this, lists);
         lvProduct.setAdapter(adapter);
     }
 
     private void addEvents() {
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                xulyAddProduct();
+            }
+        });
+        lvProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+            }
+        });
+    }
+
+    private void xulyAddProduct() {
     }
 
     private void addControls() {

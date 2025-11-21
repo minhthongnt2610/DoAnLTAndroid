@@ -18,11 +18,11 @@ public class ProductDao {
         this.context = context;
     }
 
-    public List<Product> getAll() {
+    public List<Product> getAllProduct() {
         List<Product> list = new ArrayList<>();
         SQLiteHelper helper = new SQLiteHelper(context);
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cs = db.rawQuery("SELECT * FROM Product ORDER BY id DESC", null);
+        Cursor cs = db.rawQuery("SELECT * FROM Product ORDER BY id ASC", null);
         while (cs.moveToNext()) {
             int id = cs.getInt(0);
             String name = cs.getString(1);
@@ -60,7 +60,7 @@ public class ProductDao {
     }
 
 
-    public void insert(Product product) {
+    public void insertProduct(Product product) {
         SQLiteHelper helper = new SQLiteHelper(context);
         SQLiteDatabase sql = helper.getReadableDatabase();
         ContentValues values = new ContentValues();
@@ -73,7 +73,7 @@ public class ProductDao {
         sql.close();
     }
 
-    public void update(Product product) {
+    public void updateProduct(Product product) {
         SQLiteHelper helper = new SQLiteHelper(context);
         SQLiteDatabase sql = helper.getReadableDatabase();
         ContentValues values = new ContentValues();
@@ -86,7 +86,7 @@ public class ProductDao {
         sql.close();
     }
 
-    public void delete(int productId) {
+    public void deleteProduct(int productId) {
         SQLiteHelper helper = new SQLiteHelper(context);
         SQLiteDatabase sql = helper.getReadableDatabase();
         sql.delete("Product", "id = ?", new String[]{String.valueOf(productId)});

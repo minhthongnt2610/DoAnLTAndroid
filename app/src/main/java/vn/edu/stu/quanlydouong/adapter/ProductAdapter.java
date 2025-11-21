@@ -60,7 +60,6 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
         Product p = list.get(position);
 
-        // Set dữ liệu
         holder.txtId.setText("Id: " + p.getId());
         holder.txtName.setText("Name: " + p.getName());
 
@@ -70,12 +69,11 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         else
             holder.txtCategory.setText("Category: Unknown");
 
-        // Load hình ảnh
         if (p.getImage() != null && !p.getImage().isEmpty()) {
             try {
                 holder.imgProduct.setImageURI(Uri.parse(p.getImage()));
             } catch (Exception e) {
-                holder.imgProduct.setImageResource(R.drawable.ic_app_logo); // ảnh mặc định
+                holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
             }
         } else {
             holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
