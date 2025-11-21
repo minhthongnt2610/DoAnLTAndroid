@@ -19,6 +19,10 @@ public class Product implements Serializable {
         this.categoryId = categoryId;
     }
 
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public Product() {
     }
 

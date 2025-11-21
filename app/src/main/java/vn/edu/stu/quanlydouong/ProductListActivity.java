@@ -1,5 +1,6 @@
 package vn.edu.stu.quanlydouong;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,6 +28,7 @@ public class ProductListActivity extends AppCompatActivity {
     ProductAdapter adapter;
     ArrayList<Product> lists;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,11 @@ public class ProductListActivity extends AppCompatActivity {
         dao = new ProductDao(this);
         addControls();
         addEvents();
+        loadData();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
         loadData();
     }
 
@@ -59,11 +66,16 @@ public class ProductListActivity extends AppCompatActivity {
         lvProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
+                xulyEditProduct(position);
             }
         });
     }
-
+        private void xulyEditProduct(int position) {
+        Product p = lists.get(position);
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra("id", p.getId());
+        startActivity(intent);
+    }
     private void xulyAddProduct() {
     }
 
