@@ -55,6 +55,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="Id:" />
 
@@ -62,27 +63,31 @@
                 android:id="@+id/edtId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:layout_marginBottom="8dp"
                 android:enabled="false" />
 
             <TextView
-
+                android:textColor="#000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name:" />
 
             <EditText
+                android:textColor="#000000"
                 android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp" />
 
             <TextView
+                android:textColor="#000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price:" />
 
             <EditText
+                android:textColor="#000000"
                 android:id="@+id/edtPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,22 +95,26 @@
                 android:inputType="number" />
 
             <TextView
+                android:textColor="#000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Description:" />
 
             <EditText
+                android:textColor="#000000"
                 android:id="@+id/edtDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp" />
 
             <TextView
+                android:textColor="#000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category:" />
 
             <Spinner
+                android:textColor="#000000"
                 android:id="@+id/spCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
