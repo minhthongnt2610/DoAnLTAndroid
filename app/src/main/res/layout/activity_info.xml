@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FCF6EA"
+    android:id="@+id/infoActivity"
+    android:orientation="vertical"
     tools:context=".Info_Activity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="#6CAFAB"
         android:title="@string/information"
-        android:titleTextColor="@android:color/white"/>
+        android:titleTextColor="@android:color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,74 +24,74 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:text="@string/about_me"
-                android:textSize="28sp"
-                android:textStyle="bold"
                 android:textColor="#6CAFAB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/my_name"
-                android:textSize="18sp"
-                android:textColor="#333"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/my_class"
-                android:textSize="18sp"
-                android:textColor="#333"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
-                android:text="@string/my_student_id"
-                android:textSize="18sp"
-                android:textColor="#333"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:text="@string/my_student_id"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
-                android:layout_marginBottom="20dp">
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnCall"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
-                    android:text="@string/btn_call_me"
-                    android:textColor="#FFFFFF"
                     android:backgroundTint="#6CAFAB"
-                    android:layout_marginRight="10dp"/>
+                    android:text="@string/btn_call_me"
+                    android:textColor="#FFFFFF" />
 
                 <Button
                     android:id="@+id/btnDial"
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
+                    android:backgroundTint="#6CAFAB"
                     android:text="@string/btn_dial_me"
-                    android:textColor="#FFFFFF"
-                    android:backgroundTint="#6CAFAB"/>
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
             <fragment
                 android:id="@+id/mapFragment"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"/>
+                android:layout_height="300dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

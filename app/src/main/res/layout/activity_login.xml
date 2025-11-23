@@ -19,6 +19,7 @@
         android:id="@+id/edtUsername"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:textColor="#000000"
         android:hint="@string/username"
         android:padding="12dp"
         android:background="@drawable/edittext_bg" />
@@ -28,6 +29,7 @@
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:hint="@string/password"
+        android:textColor="#000000"
         android:padding="12dp"
         android:background="@drawable/edittext_bg"
         android:inputType="textPassword"
