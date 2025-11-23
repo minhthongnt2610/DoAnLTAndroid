@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="#6CAFAB"
-            android:title="Product Management"
+            android:title="@string/product_management"
             android:titleTextColor="@android:color/white" />
 
         <ImageView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#6CAFAB"
-            android:text="Choose image"
+            android:text="@string/choose_image"
             android:textColor="@android:color/white" />
 
         <LinearLayout
@@ -54,10 +54,10 @@
             android:padding="16dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:text="@string/product_id"
                 android:textColor="#000000"
-                android:layout_height="wrap_content"
-                android:text="Id:" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/edtId"
@@ -68,56 +68,56 @@
                 android:enabled="false" />
 
             <TextView
+                android:text="@string/product_name"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name:" />
+                android:layout_height="wrap_content" />
 
             <EditText
-                android:textColor="#000000"
                 android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:layout_marginBottom="12dp" />
 
             <TextView
+                android:text="@string/product_price"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Price:" />
+                android:layout_height="wrap_content" />
 
             <EditText
-                android:textColor="#000000"
                 android:id="@+id/edtPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:layout_marginBottom="12dp"
                 android:inputType="number" />
 
             <TextView
+                android:text="@string/product_desc"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Description:" />
+                android:layout_height="wrap_content" />
 
             <EditText
-                android:textColor="#000000"
                 android:id="@+id/edtDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#000000"
                 android:layout_marginBottom="12dp" />
 
             <TextView
+                android:text="@string/product_category"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Category:" />
+                android:layout_height="wrap_content" />
 
             <Spinner
-                android:textColor="#000000"
                 android:id="@+id/spCategory"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="#000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                     android:layout_width="110dp"
                     android:layout_height="42dp"
                     android:backgroundTint="#6CAFAB"
-                    android:text="Exit"
+                    android:text="@string/exit"
                     android:textColor="@android:color/white" />
 
                 <Button
@@ -140,7 +140,7 @@
                     android:layout_height="42dp"
                     android:layout_marginLeft="16dp"
                     android:backgroundTint="#6CAFAB"
-                    android:text="Save"
+                    android:text="@string/save"
                     android:textColor="@android:color/white" />
             </LinearLayout>
         </LinearLayout>

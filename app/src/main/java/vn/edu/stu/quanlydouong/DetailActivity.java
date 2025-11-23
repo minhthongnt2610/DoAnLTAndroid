@@ -163,11 +163,11 @@ public class DetailActivity extends AppCompatActivity {
             product.setCategoryId(categoryId);
             product.setImage(imagePath);
             productDao.updateProduct(product);
-            Toast.makeText(this, "Update thành công", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.update_success), Toast.LENGTH_SHORT).show();
         } else {
             Product p = new Product(0, name, categoryId, price, desc, imagePath);
             productDao.insertProduct(p);
-            Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.add_success), Toast.LENGTH_SHORT).show();
         }
         finish();
     }

@@ -60,14 +60,13 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
         Product p = list.get(position);
 
-        holder.txtId.setText("Id: " + p.getId());
-        holder.txtName.setText("Name: " + p.getName());
-
+        holder.txtId.setText(context.getString(R.string.product_id) +" "+ p.getId());
+        holder.txtName.setText(context.getString(R.string.product_name) + " " + p.getName());
         Category cate = categoryDao.getById(p.getCategoryId());
         if (cate != null)
-            holder.txtCategory.setText("Category: " + cate.getName());
+            holder.txtCategory.setText(context.getString(R.string.product_category) + " " + cate.getName());
         else
-            holder.txtCategory.setText("Category: Unknown");
+            holder.txtCategory.setText(context.getString(R.string.product_category) + " " + context.getString(R.string.unknown));
 
         String img = p.getImage();
 

@@ -4,12 +4,16 @@
 
     <item
         android:id="@+id/mnuProduct"
-        android:title="Product Management"
+        android:title="@string/menu_product"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/mnuInfo"
-        android:title="Information"
+        android:title="@string/menu_info"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/mnuCategory"
+        android:title="@string/menu_category"
+        app:showAsAction="never" />
 </menu>

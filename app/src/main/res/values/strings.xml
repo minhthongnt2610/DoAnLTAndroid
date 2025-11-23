@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Drink Manager</string>
-
+    <string name="unknown" translatable="false">Unknown</string>
     <string name="login_title">LOGIN</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
@@ -37,4 +37,27 @@
 
     <string name="update_success">Update successful</string>
     <string name="insert_success">Insert successful</string>
+
+    <string name="confirm_delete">Delete confirmation</string>
+    <string name="delete_question">Are you sure you want to delete</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="error_empty_name">Please enter category name</string>
+
+    <string name="add_success">Category added successfully!</string>
+    <string name="login_success">Login success!</string>
+    <string name="login_error">Invalid username or password</string>
+
+    <string name="information">Information</string>
+
+    <string name="my_name">Name: Nguyễn Minh Thông</string>
+    <string name="my_class">Class: D22-TH02</string>
+    <string name="my_student_id">Student ID: DH52201516</string>
+
+    <string name="btn_call_me">Call Me</string>
+    <string name="btn_dial_me">Dial Me</string>
+    <string name="menu_product">Product Management</string>
+    <string name="menu_info">Information</string>
+    <string name="menu_category">Category Management</string>
 </resources>

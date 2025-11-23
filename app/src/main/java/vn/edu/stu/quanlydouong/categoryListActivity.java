@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -42,18 +41,20 @@ public class categoryListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_category_list);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.categoryList), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         setSupportActionBar(findViewById(R.id.toolbar));
         addControls();
         dao = new CategoryDao(this);
         addEvents();
         loadData();
-
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_menu, menu);
@@ -69,9 +70,8 @@ public class categoryListActivity extends AppCompatActivity {
         } else if (itemId == R.id.mnuInfo) {
             startActivity(new Intent(this, Info_Activity.class));
             return true;
-        } else {
-            return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
     }
 
     private void loadData() {
@@ -81,86 +81,65 @@ public class categoryListActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        btnClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                xulyClear();
-            }
-        });
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                xulySave();
-            }
-        });
-        lvCategory.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-                return xulyXoa(position);
-            }
-        });
-        lvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int positon, long id) {
-                selectedCategory = lists.get(positon);
+        btnClear.setOnClickListener(v -> xulyClear());
 
-                edtCatId.setText(String.valueOf(selectedCategory.getId()));
-                edtCatName.setText(selectedCategory.getName());
-                edtCatDesc.setText(selectedCategory.getDescription());
-            }
+        btnSave.setOnClickListener(v -> xulySave());
+
+        lvCategory.setOnItemLongClickListener((adapterView, view, position, id) -> xulyXoa(position));
+
+        lvCategory.setOnItemClickListener((adapterView, view, position, id) -> {
+            selectedCategory = lists.get(position);
+
+            edtCatId.setText(String.valueOf(selectedCategory.getId()));
+            edtCatName.setText(selectedCategory.getName());
+            edtCatDesc.setText(selectedCategory.getDescription());
         });
     }
 
-
     private boolean xulyXoa(int position) {
         final Category categoryCanXoa = adapter.getItem(position);
+
         AlertDialog.Builder builder = new AlertDialog.Builder(categoryListActivity.this);
-        builder.setTitle("Xác nhận xóa");
-        builder.setMessage("Bạn có chắc muốn xóa: " + categoryCanXoa.getName() + "?");
-        builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                lists.remove(categoryCanXoa);
-                dao.delete(categoryCanXoa.getId());
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
-            }
+        builder.setTitle(getString(R.string.confirm_delete));
+        builder.setMessage(getString(R.string.delete_question) + " " + categoryCanXoa.getName() + "?");
+
+        builder.setPositiveButton(getString(R.string.delete), (dialog, which) -> {
+            lists.remove(categoryCanXoa);
+            dao.delete(categoryCanXoa.getId());
+            adapter.notifyDataSetChanged();
+            dialog.dismiss();
         });
-        builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+
+        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.cancel());
+
+        builder.create().show();
         return true;
     }
 
     private void xulySave() {
         String name = edtCatName.getText().toString();
         String desc = edtCatDesc.getText().toString();
-        Category category = new Category(name, desc);
-        if(name.isEmpty()){
-            edtCatName.setError("Vui lòng nhập tên danh mục");
+
+        if (name.isEmpty()) {
+            edtCatName.setError(getString(R.string.error_empty_name));
             return;
-        }else{
-           if(selectedCategory == null){
-               Category newCategory = new Category(name, desc);
-               dao.insert(newCategory);
-               Toast.makeText( categoryListActivity.this, "Thêm danh mục thành công!", Toast.LENGTH_SHORT).show();
-           }else{
-                selectedCategory.setName(name);
-                selectedCategory.setDescription(desc);
-                dao.update(selectedCategory);
-                Toast.makeText( categoryListActivity.this, "Cập nhật danh mục thành công!", Toast.LENGTH_SHORT).show();
-                selectedCategory = null;
-              }
-                loadData();
-                xulyClear();
-           }
         }
 
+        if (selectedCategory == null) {
+            Category newCategory = new Category(name, desc);
+            dao.insert(newCategory);
+            Toast.makeText(this, getString(R.string.add_success), Toast.LENGTH_SHORT).show();
+        } else {
+            selectedCategory.setName(name);
+            selectedCategory.setDescription(desc);
+            dao.update(selectedCategory);
+            Toast.makeText(this, getString(R.string.update_success), Toast.LENGTH_SHORT).show();
+            selectedCategory = null;
+        }
+
+        loadData();
+        xulyClear();
+    }
 
     private void xulyClear() {
         edtCatId.setText("");

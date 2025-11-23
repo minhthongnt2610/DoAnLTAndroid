@@ -48,9 +48,9 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
 
         Category c = list.get(position);
 
-        holder.txtCatId.setText("ID: " + c.getId());
-        holder.txtCatName.setText("Name: " + c.getName());
-        holder.txtCatDesc.setText("Desc: " + c.getDescription());
+        holder.txtCatId.setText(context.getString(R.string.type_id) + " " + c.getId());
+        holder.txtCatName.setText(context.getString(R.string.type_name) + " " + c.getName());
+        holder.txtCatDesc.setText(context.getString(R.string.type_description) + " " + c.getDescription());
 
         return convertView;
     }

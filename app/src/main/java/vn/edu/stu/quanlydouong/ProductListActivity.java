@@ -1,14 +1,16 @@
 package vn.edu.stu.quanlydouong;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,20 +19,16 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import vn.edu.stu.quanlydouong.adapter.ProductAdapter;
 import vn.edu.stu.quanlydouong.dao.ProductDao;
-import vn.edu.stu.quanlydouong.model.Category;
 import vn.edu.stu.quanlydouong.model.Product;
-
 public class ProductListActivity extends AppCompatActivity {
     FloatingActionButton fabAdd;
     ListView lvProduct;
     ProductDao dao;
     ProductAdapter adapter;
     ArrayList<Product> lists;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +40,29 @@ public class ProductListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        setSupportActionBar(findViewById(R.id.toolbar));
         dao = new ProductDao(this);
         addControls();
         addEvents();
         loadData();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.mnuCategory) {
+            startActivity(new Intent(this, categoryListActivity.class));
+            return true;
+        } else if (itemId == R.id.mnuInfo) {
+            startActivity(new Intent(this, Info_Activity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     @Override
     protected void onResume() {
@@ -78,32 +95,21 @@ public class ProductListActivity extends AppCompatActivity {
                 return xulyDeleteProduct(position);
             }
         });
-
     }
 
     private boolean xulyDeleteProduct(int position) {
-
         final Product productCanXoa = adapter.getItem(position);
         AlertDialog.Builder builder = new AlertDialog.Builder(ProductListActivity.this);
-        builder.setTitle("Xác nhận xóa");
-        builder.setMessage("Bạn có chắc muốn xóa sản phẩm: " + productCanXoa.getName() + "?");
-        builder.setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                lists.remove(productCanXoa);
-                dao.deleteProduct(productCanXoa.getId());
-                adapter.notifyDataSetChanged();
-                dialog.dismiss();
-            }
+        builder.setTitle(getString(R.string.confirm_delete));
+        builder.setMessage(getString(R.string.delete_question) + " " + productCanXoa.getName() + "?");
+        builder.setPositiveButton(getString(R.string.delete), (dialog, which) -> {
+            lists.remove(productCanXoa);
+            dao.deleteProduct(productCanXoa.getId());
+            adapter.notifyDataSetChanged();
+            dialog.dismiss();
         });
-        builder.setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        builder.setNegativeButton(getString(R.string.cancel), (dialog, which) -> dialog.cancel());
+        builder.create().show();
         return true;
     }
 
@@ -113,9 +119,9 @@ public class ProductListActivity extends AppCompatActivity {
         intent.putExtra("id", p.getId());
         startActivity(intent);
     }
+
     private void xulyAddProduct() {
-        Intent intent = new Intent(this, DetailActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, DetailActivity.class));
     }
 
     private void addControls() {

@@ -1,86 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:id="@+id/infoActivity"
     android:background="#FCF6EA"
     tools:context=".Info_Activity">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:background="#6CAFAB"
+        android:title="@string/information"
+        android:titleTextColor="@android:color/white"/>
 
-        <TextView
-            android:text="ABOUT ME"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="#6CAFAB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-        <!-- PERSONAL INFO -->
-        <TextView
-            android:text="Name: Nguyễn Minh Thông"
-            android:textSize="18sp"
-            android:textColor="#333"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:text="Class: D22-TH02"
-            android:textSize="18sp"
-            android:textColor="#333"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:text="Student ID: DH52201516"
-            android:textSize="18sp"
-            android:textColor="#333"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
-
-
-        <!-- CALL BUTTON -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="20dp">
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-            <Button
-                android:id="@+id/btnCall"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:text="Call Me"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#6CAFAB"
-                android:layout_marginRight="10dp"/>
+            <TextView
+                android:text="@string/about_me"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#6CAFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
 
-            <Button
-                android:id="@+id/btnDial"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:text="Dial Me"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#6CAFAB"/>
+            <TextView
+                android:text="@string/my_name"
+                android:textSize="18sp"
+                android:textColor="#333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:text="@string/my_class"
+                android:textSize="18sp"
+                android:textColor="#333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:text="@string/my_student_id"
+                android:textSize="18sp"
+                android:textColor="#333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnCall"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_call_me"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6CAFAB"
+                    android:layout_marginRight="10dp"/>
+
+                <Button
+                    android:id="@+id/btnDial"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:text="@string/btn_dial_me"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6CAFAB"/>
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/mapFragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/>
         </LinearLayout>
-
-        <fragment
-            android:id="@+id/mapFragment"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"/>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

@@ -48,13 +48,13 @@ public class LoginActivity extends AppCompatActivity {
         String username = edtUsername.getText().toString();
         String password = edtPassword.getText().toString();
         if (username.equals("admin") && password.equals("123")) {
-            Toast.makeText(LoginActivity.this, "Login success!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, getString(R.string.login_success), Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this, categoryListActivity.class);
             startActivity(intent);
             finish();
         } else {
-            edtUsername.setError("Invalid username or password");
-            edtPassword.setError("Invalid username or password");
+            edtUsername.setError(getString(R.string.login_error));
+            edtPassword.setError(getString(R.string.login_error));
         }
     }
 
