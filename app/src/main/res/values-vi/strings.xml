@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Quản lý đồ uống</string>
+
+    <string name="login_title">ĐĂNG NHẬP</string>
+    <string name="username">Tên đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+
+    <string name="category_management">Quản lý loại</string>
+    <string name="type_management">QUẢN LÝ LOẠI</string>
+    <string name="type_id">Mã loại:</string>
+    <string name="type_name">Tên loại:</string>
+    <string name="type_description">Mô tả:</string>
+    <string name="hint_auto_number">Tự động</string>
+    <string name="hint_enter_category_name">Nhập tên loại</string>
+    <string name="hint_enter_category_description">Nhập mô tả loại</string>
+    <string name="clear">Xóa</string>
+    <string name="save">Lưu</string>
+
+    <string name="product_management">Quản lý sản phẩm</string>
+
+    <string name="choose_image">Chọn hình ảnh</string>
+    <string name="product_id">Mã:</string>
+    <string name="product_name">Tên:</string>
+    <string name="product_price">Giá:</string>
+    <string name="product_desc">Mô tả:</string>
+    <string name="product_category">Loại:</string>
+    <string name="exit">Thoát</string>
+
+    <string name="about_me">THÔNG TIN</string>
+    <string name="name_label">Họ tên:</string>
+    <string name="class_label">Lớp:</string>
+    <string name="student_id_label">Mã SV:</string>
+    <string name="email_label">Email:</string>
+    <string name="call_me">Gọi điện</string>
+    <string name="dial_me">Quay số</string>
+
+    <string name="update_success">Cập nhật thành công</string>
+    <string name="insert_success">Thêm thành công</string>
+</resources>

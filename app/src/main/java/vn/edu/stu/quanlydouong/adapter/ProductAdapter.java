@@ -69,13 +69,29 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         else
             holder.txtCategory.setText("Category: Unknown");
 
-        if (p.getImage() != null && !p.getImage().isEmpty()) {
+        String img = p.getImage();
+
+        if (img == null || img.isEmpty()) {
+            holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
+        }
+        else if (img.startsWith("content://") || img.startsWith("file://")) {
             try {
-                holder.imgProduct.setImageURI(Uri.parse(p.getImage()));
+                holder.imgProduct.setImageURI(Uri.parse(img));
             } catch (Exception e) {
                 holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
             }
-        } else {
+        }
+        else if (img.endsWith(".png")) {
+            String fileName = img.replace(".png", "");
+            int resId = context.getResources()
+                    .getIdentifier(fileName, "drawable", context.getPackageName());
+
+            if (resId != 0)
+                holder.imgProduct.setImageResource(resId);
+            else
+                holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
+        }
+        else {
             holder.imgProduct.setImageResource(R.drawable.ic_app_logo);
         }
 

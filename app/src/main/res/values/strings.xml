@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">QuanLyDoUong</string>
+    <string name="app_name">Drink Manager</string>
+
+    <string name="login_title">LOGIN</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="category_management">Category Management</string>
+    <string name="type_management">TYPE MANAGEMENT</string>
+    <string name="type_id">Type ID:</string>
+    <string name="type_name">Type name:</string>
+    <string name="type_description">Type description:</string>
+    <string name="hint_auto_number">Auto number</string>
+    <string name="hint_enter_category_name">Enter category name</string>
+    <string name="hint_enter_category_description">Enter category description</string>
+    <string name="clear">Clear</string>
+    <string name="save">Save</string>
+
+    <string name="product_management">Product Management</string>
+
+    <string name="choose_image">Choose image</string>
+    <string name="product_id">Id:</string>
+    <string name="product_name">Name:</string>
+    <string name="product_price">Price:</string>
+    <string name="product_desc">Description:</string>
+    <string name="product_category">Category:</string>
+    <string name="exit">Exit</string>
+
+    <string name="about_me">ABOUT ME</string>
+    <string name="name_label">Name:</string>
+    <string name="class_label">Class:</string>
+    <string name="student_id_label">Student ID:</string>
+    <string name="email_label">Email:</string>
+    <string name="call_me">Call Me</string>
+    <string name="dial_me">Dial Me</string>
+
+    <string name="update_success">Update successful</string>
+    <string name="insert_success">Insert successful</string>
 </resources>

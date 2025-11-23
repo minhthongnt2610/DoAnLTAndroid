@@ -18,14 +18,14 @@
             android:text="ABOUT ME"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#9F3A4A"
+            android:textColor="#6CAFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"/>
 
         <!-- PERSONAL INFO -->
         <TextView
-            android:text="Name: Nguyễn Văn A"
+            android:text="Name: Nguyễn Minh Thông"
             android:textSize="18sp"
             android:textColor="#333"
             android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:text="Class: DH21DTA"
+            android:text="Class: D22-TH02"
             android:textSize="18sp"
             android:textColor="#333"
             android:layout_width="wrap_content"
@@ -41,33 +41,42 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:text="Student ID: 123456789"
+            android:text="Student ID: DH52201516"
             android:textSize="18sp"
             android:textColor="#333"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:text="Email: example@gmail.com"
-            android:textSize="18sp"
-            android:textColor="#333"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
 
         <!-- CALL BUTTON -->
-        <Button
-            android:id="@+id/btnCall"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Call Me"
-            android:textColor="#FFFFFF"
-            android:backgroundTint="#9F3A4A"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
 
-        <!-- GOOGLE MAP -->
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="Call Me"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#6CAFAB"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/btnDial"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="Dial Me"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#6CAFAB"/>
+        </LinearLayout>
+
         <fragment
             android:id="@+id/mapFragment"
             android:name="com.google.android.gms.maps.SupportMapFragment"

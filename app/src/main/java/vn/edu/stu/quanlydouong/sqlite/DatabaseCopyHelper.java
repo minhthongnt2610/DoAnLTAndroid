@@ -9,7 +9,7 @@ import java.io.OutputStream;
 
 public class DatabaseCopyHelper {
 
-    private static final String DB_NAME = "quanLyDoUong.db";
+    private static final String DB_NAME = "QLDoUong.db";
     private Context context;
     private String dbPath;
 

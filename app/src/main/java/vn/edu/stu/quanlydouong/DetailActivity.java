@@ -3,6 +3,7 @@ package vn.edu.stu.quanlydouong;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -59,6 +60,39 @@ public class DetailActivity extends AppCompatActivity {
         checkEdit();
     }
 
+    private void loadImage(String img) {
+        Log.d("LOAD_IMAGE", "imagePath = " + img);
+        if (img == null || img.isEmpty()) {
+            imgProduct.setImageResource(R.drawable.ic_app_logo);
+            return;
+        }
+        if (img.startsWith("content://") || img.startsWith("file://")) {
+            Log.d("LOAD_IMAGE", "-> URI → load from gallery");
+
+            imgProduct.setImageURI(Uri.parse(img));
+            return;
+        }
+        if (img.endsWith(".png")) {
+            String fileName = img.replace(".png", "");
+            fileName = fileName.toLowerCase();
+            Log.d("LOAD_IMAGE", "-> PNG drawable = " + fileName);
+
+            int resId = getResources().getIdentifier(
+                    fileName, "drawable", getPackageName()
+            );
+            Log.d("LOAD_IMAGE", "-> resId = " + resId);
+            if (resId != 0)
+                imgProduct.setImageResource(resId);
+            else
+                imgProduct.setImageResource(R.drawable.ic_app_logo);
+            return;
+        }
+        Log.d("LOAD_IMAGE", "-> Unrecognized format");
+
+        imgProduct.setImageResource(R.drawable.ic_app_logo);
+    }
+
+
     private void checkEdit() {
         Intent intent = getIntent();
         if (intent.hasExtra("id")) {
@@ -70,9 +104,7 @@ public class DetailActivity extends AppCompatActivity {
             edtPrice.setText(String.valueOf(product.getPrice()));
             edtDesc.setText(product.getDescription());
             imagePath = product.getImage();
-            if (imagePath != null && !imagePath.isEmpty()) {
-                imgProduct.setImageURI(Uri.parse(imagePath));
-            }
+            loadImage(imagePath);
             for (int i = 0; i < categoryLists.size(); i++) {
                 if (categoryLists.get(i).getId() == product.getCategoryId()) {
                     spnCategory.setSelection(i);
@@ -154,5 +186,19 @@ public class DetailActivity extends AppCompatActivity {
         productDao = new ProductDao(this);
         categoryLists = categoryDao.getAll();
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_IMAGE && resultCode == RESULT_OK && data != null) {
+
+            Uri uri = data.getData();
+            imagePath = uri.toString();
+
+            Log.d("TEST_URI", "URI = " + imagePath);
+
+            imgProduct.setImageURI(uri);
+        }
     }
 }
