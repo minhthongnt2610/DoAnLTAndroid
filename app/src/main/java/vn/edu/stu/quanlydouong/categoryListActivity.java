@@ -1,13 +1,10 @@
 package vn.edu.stu.quanlydouong;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -104,9 +101,23 @@ public class categoryListActivity extends AppCompatActivity {
         builder.setMessage(getString(R.string.delete_question) + " " + categoryCanXoa.getName() + "?");
 
         builder.setPositiveButton(getString(R.string.delete), (dialog, which) -> {
-            lists.remove(categoryCanXoa);
-            dao.delete(categoryCanXoa.getId());
-            adapter.notifyDataSetChanged();
+
+            boolean ketQua = dao.delete(categoryCanXoa.getId());
+
+            if (ketQua) {
+                lists.remove(categoryCanXoa);
+                adapter.notifyDataSetChanged();
+
+                Toast.makeText(categoryListActivity.this,
+                        getString(R.string.delete_success),
+                        Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(categoryListActivity.this,
+                        getString(R.string.delete_fail_has_products),
+                        Toast.LENGTH_LONG).show();
+            }
+
             dialog.dismiss();
         });
 
@@ -115,6 +126,7 @@ public class categoryListActivity extends AppCompatActivity {
         builder.create().show();
         return true;
     }
+
 
     private void xulySave() {
         String name = edtCatName.getText().toString();

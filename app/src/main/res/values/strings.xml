@@ -19,6 +19,9 @@
 
     <string name="product_management">Product Management</string>
 
+    <string name="delete_success">Deleted successfully!</string>
+    <string name="delete_fail_has_products">Cannot delete because this category still has products!</string>
+
     <string name="choose_image">Choose image</string>
     <string name="product_id">Id:</string>
     <string name="product_name">Name:</string>

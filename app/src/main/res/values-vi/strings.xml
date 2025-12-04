@@ -27,6 +27,10 @@
     <string name="product_category">Loại:</string>
     <string name="exit">Thoát</string>
 
+    <string name="delete_success">Xóa thành công!</string>
+    <string name="delete_fail_has_products">Không thể xóa vì Category đang có sản phẩm!</string>
+
+
     <string name="about_me">THÔNG TIN</string>
     <string name="name_label">Họ tên:</string>
     <string name="class_label">Lớp:</string>
