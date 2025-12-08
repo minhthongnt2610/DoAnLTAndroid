@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "vn.edu.stu.quanlydouong"
+    namespace = "vn.edu.stu.NguyenMinhThong_DH52201516"
     compileSdk = 36
 
     defaultConfig {

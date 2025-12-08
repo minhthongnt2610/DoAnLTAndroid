@@ -1,6 +1,6 @@
-package vn.edu.stu.quanlydouong;
+package vn.edu.stu.NguyenMinhThong_DH52201516;
+
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,9 +20,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-import vn.edu.stu.quanlydouong.adapter.ProductAdapter;
-import vn.edu.stu.quanlydouong.dao.ProductDao;
-import vn.edu.stu.quanlydouong.model.Product;
+import vn.edu.stu.NguyenMinhThong_DH52201516.adapter.ProductAdapter;
+import vn.edu.stu.NguyenMinhThong_DH52201516.dao.ProductDao;
+import vn.edu.stu.NguyenMinhThong_DH52201516.model.Product;
+
 public class ProductListActivity extends AppCompatActivity {
     FloatingActionButton fabAdd;
     ListView lvProduct;
@@ -46,6 +47,7 @@ public class ProductListActivity extends AppCompatActivity {
         addEvents();
         loadData();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_menu, menu);
@@ -64,6 +66,7 @@ public class ProductListActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     protected void onResume() {
         super.onResume();

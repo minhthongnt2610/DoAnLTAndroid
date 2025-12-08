@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.adapter;
+package vn.edu.stu.NguyenMinhThong_DH52201516.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import vn.edu.stu.quanlydouong.R;
-import vn.edu.stu.quanlydouong.model.Category;
-
 import java.util.List;
+
+import vn.edu.stu.NguyenMinhThong_DH52201516.R;
+import vn.edu.stu.NguyenMinhThong_DH52201516.model.Category;
 
 public class CategoryAdapter extends ArrayAdapter<Category> {
 
@@ -48,7 +48,7 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
 
         Category c = list.get(position);
 
-        holder.txtCatId.setText(context.getString(R.string.type_id) + " " + c.getId());
+        holder.txtCatId.setText(context.getString(R.string.type_id) + " " + String.format("TL%03d", c.getId()));
         holder.txtCatName.setText(context.getString(R.string.type_name) + " " + c.getName());
         holder.txtCatDesc.setText(context.getString(R.string.type_description) + " " + c.getDescription());
 

@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.dao;
+package vn.edu.stu.NguyenMinhThong_DH52201516.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.stu.quanlydouong.model.Product;
-import vn.edu.stu.quanlydouong.sqlite.SQLiteHelper;
+import vn.edu.stu.NguyenMinhThong_DH52201516.model.Product;
+import vn.edu.stu.NguyenMinhThong_DH52201516.sqlite.SQLiteHelper;
 
 public class ProductDao {
     Context context;
@@ -29,7 +29,7 @@ public class ProductDao {
             int cateId = cs.getInt(2);
             double price = cs.getDouble(3);
             String desc = cs.getString(4);
-            String image = cs.getString(5);
+            byte[] image = cs.getBlob(5);
             list.add(new Product(id, name, cateId, price, desc, image));
         }
         cs.close();
@@ -48,7 +48,7 @@ public class ProductDao {
                     cs.getInt(2),
                     cs.getDouble(3),
                     cs.getString(4),
-                    cs.getString(5)
+                    cs.getBlob(5)
             );
             cs.close();
             db.close();

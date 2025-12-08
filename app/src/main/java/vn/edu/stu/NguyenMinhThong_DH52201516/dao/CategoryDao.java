@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.dao;
+package vn.edu.stu.NguyenMinhThong_DH52201516.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.edu.stu.quanlydouong.model.Category;
-import vn.edu.stu.quanlydouong.sqlite.SQLiteHelper;
+import vn.edu.stu.NguyenMinhThong_DH52201516.model.Category;
+import vn.edu.stu.NguyenMinhThong_DH52201516.sqlite.SQLiteHelper;
 
 public class CategoryDao {
     Context context;

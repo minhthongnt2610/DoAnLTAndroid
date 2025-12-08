@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong;
+package vn.edu.stu.NguyenMinhThong_DH52201516;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -19,9 +19,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
-import vn.edu.stu.quanlydouong.adapter.CategoryAdapter;
-import vn.edu.stu.quanlydouong.dao.CategoryDao;
-import vn.edu.stu.quanlydouong.model.Category;
+import vn.edu.stu.NguyenMinhThong_DH52201516.adapter.CategoryAdapter;
+import vn.edu.stu.NguyenMinhThong_DH52201516.dao.CategoryDao;
+import vn.edu.stu.NguyenMinhThong_DH52201516.model.Category;
 
 public class categoryListActivity extends AppCompatActivity {
 
@@ -87,7 +87,7 @@ public class categoryListActivity extends AppCompatActivity {
         lvCategory.setOnItemClickListener((adapterView, view, position, id) -> {
             selectedCategory = lists.get(position);
 
-            edtCatId.setText(String.valueOf(selectedCategory.getId()));
+            edtCatId.setText(String.format("TL%03d", selectedCategory.getId()));
             edtCatName.setText(selectedCategory.getName());
             edtCatDesc.setText(selectedCategory.getDescription());
         });

@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.model;
+package vn.edu.stu.NguyenMinhThong_DH52201516.model;
 
 import java.io.Serializable;
 
@@ -6,11 +6,11 @@ public class Product implements Serializable {
     private int id;
     private String name;
     private String description;
-    private String image;
+    private byte[] image;
     private double price;
     private int categoryId;
 
-    public Product(int id, String name, int categoryId, double price, String description,String image ) {
+    public Product(int id, String name, int categoryId, double price, String description, byte[] image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -50,11 +50,11 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

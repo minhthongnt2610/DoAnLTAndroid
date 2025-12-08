@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.sqlite;
+package vn.edu.stu.NguyenMinhThong_DH52201516.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -23,7 +23,8 @@ public class DatabaseCopyHelper {
 
         try {
             checkDB = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READONLY);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
 
         if (checkDB != null) {
             checkDB.close();

@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong;
+package vn.edu.stu.NguyenMinhThong_DH52201516;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +13,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import vn.edu.stu.quanlydouong.sqlite.DatabaseCopyHelper;
+import vn.edu.stu.NguyenMinhThong_DH52201516.sqlite.DatabaseCopyHelper;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

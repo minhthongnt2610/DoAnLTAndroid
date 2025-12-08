@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong;
+package vn.edu.stu.NguyenMinhThong_DH52201516;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -109,12 +108,13 @@ public class Info_Activity extends AppCompatActivity implements OnMapReadyCallba
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
 
-        mMap.setMapType( GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         LatLng STU = new LatLng(10.73807, 106.67788);
         mMap.addMarker(new MarkerOptions().position(STU).title("STU University"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(STU, 16));

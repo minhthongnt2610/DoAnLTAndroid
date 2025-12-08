@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+
+#Ignore vscode AI rules
+.github\instructions\codacy.instructions.md

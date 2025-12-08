@@ -1,4 +1,4 @@
-package vn.edu.stu.quanlydouong.model;
+package vn.edu.stu.NguyenMinhThong_DH52201516.model;
 
 import java.io.Serializable;
 
@@ -6,12 +6,14 @@ public class Category implements Serializable {
     private int id;
     private String name;
     private String description;
+
     public Category(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
-    public Category(  String name, String description) {
+
+    public Category(String name, String description) {
         this.name = name;
         this.description = description;
     }
@@ -42,7 +44,6 @@ public class Category implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
 
 }
