@@ -31,16 +31,27 @@
             android:layout_height="wrap_content"
             android:textColor="#6CAFAB"
             android:textSize="16sp"
-            android:text="Id: 1"/>
+            android:text="Id: 1" />
+
 
         <TextView
             android:id="@+id/txtProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name: Milk Tea"
+            android:textStyle="bold"
             android:textColor="#333"
             android:textSize="15sp"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desc: Milk Tea"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:layout_marginTop="4dp" />
 
         <TextView
             android:id="@+id/txtProductCategory"
@@ -49,7 +60,7 @@
             android:text="Category: Milk Tea"
             android:textColor="#333"
             android:textSize="15sp"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
 </LinearLayout>

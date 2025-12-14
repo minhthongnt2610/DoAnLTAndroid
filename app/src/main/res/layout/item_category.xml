@@ -22,7 +22,7 @@
             android:text="ID: 1"
             android:textColor="#333333"
             android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/txtCatName"
@@ -31,7 +31,8 @@
             android:text="Name: Category"
             android:textColor="#333333"
             android:textSize="15sp"
-            android:layout_marginTop="4dp"/>
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
 
         <TextView
             android:id="@+id/txtCatDesc"
@@ -40,7 +41,7 @@
             android:text="Desc: Description here"
             android:textColor="#666666"
             android:textSize="14sp"
-            android:layout_marginTop="2dp"/>
+            android:layout_marginTop="2dp" />
 
     </LinearLayout>
 

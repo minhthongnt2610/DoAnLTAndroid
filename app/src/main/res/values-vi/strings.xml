@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Quản lý đồ uống</string>
     <string name="unknown" translatable="false">Không xác định</string>
-    <string name="login_title">ĐĂNG NHẬP</string>
+    <string name="login_title">QUẢN LÝ ĐỒ UỐNG</string>
     <string name="username">Tên đăng nhập</string>
     <string name="password">Mật khẩu</string>
     <string name="login">Đăng nhập</string>

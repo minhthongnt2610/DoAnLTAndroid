@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Drink Manager</string>
     <string name="unknown" translatable="false">Unknown</string>
-    <string name="login_title">LOGIN</string>
+    <string name="login_title">DRINK MANAGEMENT</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
@@ -21,7 +21,6 @@
 
     <string name="delete_success">Deleted successfully!</string>
     <string name="delete_fail_has_products">Cannot delete because this category still has products!</string>
-
     <string name="choose_image">Choose image</string>
     <string name="product_id">Id:</string>
     <string name="product_name">Name:</string>
@@ -61,6 +60,6 @@
     <string name="btn_call_me">Call Me</string>
     <string name="btn_dial_me">Dial Me</string>
     <string name="menu_product">Product Management</string>
-    <string name="menu_info">Information</string>
+    <string name="menu_info">About</string>
     <string name="menu_category">Category Management</string>
 </resources>

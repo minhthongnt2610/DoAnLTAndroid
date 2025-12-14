@@ -10,6 +10,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.edu.stu.NguyenMinhThong_DH52201516.R;
 import vn.edu.stu.NguyenMinhThong_DH52201516.model.Category;
 import vn.edu.stu.NguyenMinhThong_DH52201516.sqlite.SQLiteHelper;
 
@@ -58,28 +59,38 @@ public class CategoryDao {
         sql.close();
     }
 
+    public boolean haveDrink(int id) {
+        SQLiteHelper helper = new SQLiteHelper(context);
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        Cursor cs = db.rawQuery(
+                "SELECT COUNT(*) FROM Product WHERE categoryId = ?",
+                new String[]{String.valueOf(id)}
+        );
+
+        boolean yes = false;
+        if (cs.moveToFirst()) {
+            yes = cs.getInt(0) > 0;
+        }
+
+        cs.close();
+        db.close();
+        return yes;
+    }
+
     public boolean delete(int id) {
         SQLiteHelper helper = new SQLiteHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
-
         try {
-            // Bật ràng buộc khóa ngoại
-            db.execSQL("PRAGMA foreign_keys = ON;");
-
-            // Thực hiện xoá
+            db.execSQL("PRAGMA foreign_keys = ON");
             int rows = db.delete("Category", "id=?", new String[]{String.valueOf(id)});
-
             db.close();
-
-            // Nếu rows > 0 nghĩa là xoá thành công
             return rows > 0;
-
         } catch (SQLiteConstraintException e) {
-            // Bắt lỗi khi category có sản phẩm
             if (e.getMessage() != null && e.getMessage().contains("FOREIGN KEY constraint failed")) {
-                Log.e("DB", "Không thể xóa category vì đang có sản phẩm");
+                Log.e("DB", String.valueOf(R.string.delete_fail_has_products));
             } else {
-                Log.e("DB", "Lỗi khi xóa: " + e.getMessage());
+                Log.e("DB", R.string.delete_question + e.getMessage());
             }
 
             db.close();

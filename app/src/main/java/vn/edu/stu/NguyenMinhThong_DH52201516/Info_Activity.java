@@ -117,6 +117,6 @@ public class Info_Activity extends AppCompatActivity implements OnMapReadyCallba
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         LatLng STU = new LatLng(10.73807, 106.67788);
         mMap.addMarker(new MarkerOptions().position(STU).title("STU University"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(STU, 16));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(STU, 17));
     }
 }

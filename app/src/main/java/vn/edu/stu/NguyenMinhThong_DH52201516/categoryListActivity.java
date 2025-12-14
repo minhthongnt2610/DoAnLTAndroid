@@ -101,7 +101,34 @@ public class categoryListActivity extends AppCompatActivity {
         builder.setMessage(getString(R.string.delete_question) + " " + categoryCanXoa.getName() + "?");
 
         builder.setPositiveButton(getString(R.string.delete), (dialog, which) -> {
+//            if (dao.coMonAnThuocLoai(loaiMonAn.getId())) {
+//                Toast.makeText(
+//                        DanhMucMonAn.this,
+//                        R.string.thongBaoXoa,
+//                        Toast.LENGTH_SHORT
+//                ).show();
+//                dialog.dismiss();
+//                return;
+//            }
+//
+//            // Nếu không có món → xóa
+//            boolean ok = dao.xoaLoai(loaiMonAn.getId());
+//            if (ok) {
+//                ds.remove(position);
+//                adapter.notifyDataSetChanged();
+//                Toast.makeText(DanhMucMonAn.this, R.string.xoaThanhCong, Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(DanhMucMonAn.this, R.string.xoaThatBai, Toast.LENGTH_SHORT).show();
+//            }
 
+//            dialog.dismiss();
+            if (dao.haveDrink(categoryCanXoa.getId())) {
+                Toast.makeText(categoryListActivity.this,
+                        getString(R.string.delete_fail_has_products),
+                        Toast.LENGTH_LONG).show();
+                dialog.dismiss();
+                return;
+            }
             boolean ketQua = dao.delete(categoryCanXoa.getId());
 
             if (ketQua) {

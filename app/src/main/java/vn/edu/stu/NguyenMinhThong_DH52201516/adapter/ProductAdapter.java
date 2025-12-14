@@ -35,7 +35,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
     private static class ViewHolder {
         ImageView imgProduct;
-        TextView txtId, txtName, txtCategory;
+        TextView txtId, txtName, txtCategory, txtDesc;
     }
 
     @NonNull
@@ -50,6 +50,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             holder.txtId = convertView.findViewById(R.id.txtProductId);
             holder.txtName = convertView.findViewById(R.id.txtProductName);
             holder.txtCategory = convertView.findViewById(R.id.txtProductCategory);
+            holder.txtDesc = convertView.findViewById(R.id.txtDesc);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -57,6 +58,8 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         Product p = list.get(position);
         holder.txtId.setText(context.getString(R.string.product_id) + " " + String.format("SP%03d", p.getId()));
         holder.txtName.setText(context.getString(R.string.product_name) + " " + p.getName());
+        holder.txtDesc.setText(context.getString(R.string.product_desc) + " " + p.getDescription());
+
         Category cate = categoryDao.getById(p.getCategoryId());
         if (cate != null)
             holder.txtCategory.setText(context.getString(R.string.product_category) + " " + cate.getName());

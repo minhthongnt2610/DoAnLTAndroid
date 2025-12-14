@@ -9,7 +9,7 @@ import java.io.OutputStream;
 
 public class DatabaseCopyHelper {
 
-    private static final String DB_NAME = "QUANLYDOUONG.db";
+    private static final String DB_NAME = "QUANLYDOUONG.sqlite";
     private Context context;
     private String dbPath;
 
